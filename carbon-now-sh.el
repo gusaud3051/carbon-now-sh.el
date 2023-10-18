@@ -46,7 +46,7 @@
   )
 
 (defconst carbon-now-sh-baseurl "https://carbon.now.sh")
-
+(defvar   carbon-now-sh-preset "&bg=rgba(119%2C148%2C171%2C1)&t=nord&wt=none&l=auto&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false")
 (cl-defun carbon-now-sh--region(&key
                                 (beg (and (use-region-p) (region-beginning)))
                                 (end (and (use-region-p) (region-end))))
@@ -59,7 +59,8 @@
   (interactive)
   (browse-url
    (concat carbon-now-sh-baseurl "?code="
-           (url-hexify-string (carbon-now-sh--region)))))
+           (url-hexify-string (carbon-now-sh--region))
+           carbon-now-sh-preset)))
 
 (provide 'carbon-now-sh)
-;;; carbon-now-sh.el ends here
+;;; carbon-now-sh.el ends here`'
